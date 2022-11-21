@@ -21,6 +21,19 @@ namespace Exercise_3
         {
             LAST = null;
         }
+        public bool Search(int rollNo, ref Node previous, ref Node current)/*Seaches for the specofoed node*/
+        {
+            for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
+            {
+                if (rollNo == current.rollNumber)
+                    return (true); /* returns true if the node is found */
+            }
+            if (rollNo == LAST.rollNumber) /* if the node is present at the end*/
+                return true;
+            else
+                return (false); /*returns false if the node is not found*/
+        }
+
     }
     internal class Program
     {
