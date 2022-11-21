@@ -69,10 +69,10 @@ namespace Exercise_3
         {
             for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
             {
-                if (rollNo == current.rollNumber)
+                if (rollNumber == current.rollNumber)
                     return (true); /* return true if the node is found*/
             }
-            if (rollNo == LAST.rollNumber) /* if the node is present at the  end*/
+            if (rollNumber == LAST.rollNumber) /* if the node is present at the  end*/
                 return true;
             else
                 return (false); /*return false if the node is not found*/
