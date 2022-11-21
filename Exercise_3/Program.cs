@@ -13,6 +13,7 @@ namespace Exercise_3
         public string name;
         public Node next;
     }
+
     internal class Program
     {
         static void Main(string[] args)
