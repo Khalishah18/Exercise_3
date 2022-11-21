@@ -10,11 +10,9 @@ namespace Exercise_3
     class Node
     {
         /*creates Nodes for the circular nexted list*/
-        public int NoMhs;
         public int rollNumber;
         public string name;
         public Node next; //point to the succeding node
-        public Node prev; //point to the preccending node
     }
     class CircularList
     {
@@ -68,17 +66,15 @@ namespace Exercise_3
         }
         public bool Search(int rollNumber, ref Node previous, ref Node current)/*Seaches for the specofoed node*/
         {
-            previous = LAST;
-            current = LAST;
-            while ((current != null) && (rollNumber >= current.rollNumber))
+            for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
             {
-                previous = current;
-                current = current.next;
+                if (rollNo == current.rollNumber)
+                    return (true); /* return true if the node is found*/
             }
-            if (current == null)
-                return false;
-            else
+            if (rollNo == LAST.rollNumber) /* if the node is present at the  end*/
                 return true;
+            else
+                return (false); /*return false if the node is not found*/
         }
 
         public bool listEmpty()
