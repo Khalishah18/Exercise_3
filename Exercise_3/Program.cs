@@ -40,6 +40,23 @@ namespace Exercise_3
             else
                 return false;
         }
+        public void traverse() /* Traverses all the nodes of the list */
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is Empty");
+            else
+            {
+                Console.WriteLine("\nRecords in the list are : \n");
+                Node currentNode;
+                currentNode = LAST.next;
+                while (currentNode != LAST)
+                {
+                    Console.Write(currentNode.rollNumber + "" + currentNode.name + "\n");
+                    currentNode = currentNode.next;
+                }
+                Console.Write(LAST.rollNumber + " " + LAST.name + "\n");
+            }
+        }
     }
     internal class Program
     {
