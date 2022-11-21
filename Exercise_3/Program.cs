@@ -13,6 +13,7 @@ namespace Exercise_3
         public int rollNumber;
         public string name;
         public Node next; //point to the succeding node
+
     }
     class CircularList
     {
